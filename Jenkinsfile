@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker { 
-            image 'maven:3.9.3-openjdk-17'  // Maven + JDK preinstalled
-            args '-v /root/.m2:/root/.m2'   // optional: cache Maven repo
-        }
-    }
+    agent any
     stages {
         stage('Checkout') {
             steps { checkout scm }
@@ -17,4 +12,5 @@ pipeline {
         }
     }
 }
+
 
